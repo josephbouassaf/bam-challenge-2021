@@ -2,6 +2,8 @@
 
 Welcome to the Blockchain At McGill Developer Challenge 2021.
 
+https://user-images.githubusercontent.com/43356588/132113683-c23a7087-3ed8-4f13-a00f-e60060a65186.mp4
+
 The goals of this challenge are to introduce you to the tech tools we use in our projects and to test your ability to learn on your own.
 
 Please ensure that you read this entire step-by-step guide as you will be expected to know its content in your interview.
