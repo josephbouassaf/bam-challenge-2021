@@ -1,0 +1,47 @@
+{
+  "name": "bam-challenge-2021",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "prepare": "husky install",
+    "test": "jest --verbose"
+  },
+  "dependencies": {
+    "bootstrap": "^5.0.0-beta3",
+    "next": "11.0.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.14.9",
+    "@babel/preset-react": "^7.14.5",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
+    "babel-jest": "^27.0.6",
+    "eslint": "7.32.0",
+    "eslint-config-next": "11.0.1",
+    "eslint-config-prettier": "^8.3.0",
+    "husky": "^7.0.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.0.6",
+    "lint-staged": "^11.1.1",
+    "prettier": "2.3.2",
+    "react-test-renderer": "^17.0.2"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "setupFilesAfterEnv": [
+      "./jest.setup.js"
+    ],
+    "moduleNameMapper": {
+      "\\.(css|less)$": "identity-obj-proxy"
+    }
+  }
+}
