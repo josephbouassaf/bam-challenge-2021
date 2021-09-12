@@ -6,28 +6,31 @@ import { useState } from "react";
 export default function Home() {
   // TODO Create a `todoList` React state hook and initialize to an empty array
   const [item, setItem] = useState("");
+  const [todoList, setTodoList] = useState([]);
 
   function handleChange(event) {
     // TODO Implement the handle change function
     // It should set the item to the value in the input field
+    setItem(event.target.value);
   }
 
   function onClick(event) {
     event.preventDefault();
-    // TODO implement the on click function
-    // It should add the current to the todo list
-    // HINT: to get access to the current state to modify it,
-    // you can use the syntax defined two lines below, where we assume
-    // const [example, setExample] = useState(0) is a state hook
-    // setExampe((currentExample) => currentExample + 1);
+    if (item) {
+      // only add if item is not empty
+      // add the item to the list
+      const tempList = todoList;
+      tempList.push(item);
+      setTodoList(tempList);
+      setItem(""); // clear the input
+    }
   }
 
-  // TODO Delete this line and uncomment the lines below
-  // const listItems = todoList.map((listItem, index) => (
-  //   <li key={index} className="list-group-item">
-  //     {listItem}
-  //   </li>
-  // ));
+  const listItems = todoList.map((listItem, index) => (
+    <li key={index} className="list-group-item">
+      {listItem}
+    </li>
+  ));
 
   return (
     <div className={styles.container}>
@@ -70,7 +73,7 @@ export default function Home() {
                 aria-label="submit-button"
                 // TODO Add the `btn-danger` class to the className
                 // This will make the button red as expected.
-                className="btn"
+                className="btn btn-danger"
                 onClick={onClick}
               >
                 Submit
@@ -79,10 +82,7 @@ export default function Home() {
           </form>
         </div>
 
-        <div className="list-group">
-          {/* TODO Delete this line and uncomment the line below */}
-          {/* {listItems} */}
-        </div>
+        <div className="list-group">{listItems}</div>
       </main>
 
       <footer className={styles.footer}>
